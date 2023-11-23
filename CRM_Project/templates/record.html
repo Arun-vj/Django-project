@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Customer Records</h1>
+<br>
+<div class="card">
+    <div class="card-header">
+        <h5 style="text-transform: capitalize ;">
+            {{customer.first_name}}
+            {{customer.last_name}}<br>
+        </h5>   
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Email :</strong> {{customer.email}}<br>
+        <strong>Phone :</strong> {{customer.phone}}<br>
+        <strong>State :</strong>{{customer.state}}<br>
+        <strong>City :</strong>{{customer.city}}<br>
+        <strong>Zip Code :</strong>{{customer.postal_code}}<br>
+        <strong>Status :</strong>{{customer.status}}<br>
+      </p>
+    </div>
+  </div>
+<br><br>
+<a href="{% url 'home' %}"> <div class="btn btn-secondary">Back</div></a>
+
+<a href="{% url 'delete' customer.id %}"> <div class="btn btn-danger">Delete</div></a>
+
+{% endblock %}
